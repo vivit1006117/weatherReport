@@ -1,0 +1,22 @@
+.currentForecast {
+  float: left;
+  margin: 10px;
+  padding: 5px;
+  background: antiquewhite;
+}
+
+.sub-header {
+  background: black;
+}
+
+.sub-header-image {
+  width: 95%;
+  height: 100px;
+  display: block;
+  padding: 5px;
+}
+
+.sub-header-text {
+  color: white;
+  padding: 5px;
+}

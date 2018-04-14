@@ -1,0 +1,13 @@
+<table class="details">
+  <caption class="detail-header">{{ weatherForecast.state | uppercase }} DETAILED FORECAST</caption>
+  <tr class="table-header-row">
+    <th class="table-header">DATE</th>
+    <th class="table-header">Weather</th>
+  </tr>
+  <tr *ngFor="let forecast of weatherForecast.forecasts" class="table-row">
+    <td class="table-data">{{forecast.date}}</td>
+    <td class="table-data">{{forecast.weather}}</td>
+  </tr>
+</table>
+
+<button (click)="goBack()" class="goBack">Go back</button>

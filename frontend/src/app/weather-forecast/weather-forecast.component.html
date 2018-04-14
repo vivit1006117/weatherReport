@@ -1,0 +1,24 @@
+<div style="display: flex">
+  <table *ngFor="let forecast of weatherForecast.forecasts" class="currentForecast">
+    <tr>
+      <td class="sub-header">
+        <a routerLink="/detail/{{forecast.state}}">
+          <img src="../assets/weather.jpeg" class="sub-header-image">
+          <span class="sub-header-text">{{forecast.state}}</span>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>{{forecast.state}}</td>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+          <li *ngFor="let links of news.hits" style="display: flex">
+            <a href={{links.url}} target="_blank">{{links.title}}</a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>

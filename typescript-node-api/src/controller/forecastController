@@ -1,0 +1,17 @@
+import {HttpServer} from "../server/httpServer";
+import {Request, Response} from "restify";
+
+export class ForecastController{
+    public initialize(httpServer: HttpServer): void {
+        httpServer.get("weather", this.list.bind(this))
+        httpServer.get("weather/:state", this.getByState.bind(this))
+    }
+
+    private list(req: Request, res: Response) {
+
+    }
+
+    private getByState(req: Request, res: Response) {
+
+    }
+}

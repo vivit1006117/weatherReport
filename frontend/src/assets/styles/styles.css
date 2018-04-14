@@ -1,0 +1,10 @@
+.logo {
+  width: 20%;
+  height: 100px;
+  float: left;
+  padding: 10px;
+}
+
+.header {
+  display: flex
+}
