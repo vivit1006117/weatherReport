@@ -1,12 +1,31 @@
 <table class="details">
-  <caption class="detail-header">{{ weatherForecast.state | uppercase }} DETAILED FORECAST</caption>
+  <caption class="detail-header">{{ weatherForecast.city.name | uppercase }} DETAILED FORECAST</caption>
   <tr class="table-header-row">
     <th class="table-header">DATE</th>
     <th class="table-header">Weather</th>
+    <th class="table-header">Temperature</th>
+    <th class="table-header">Temperature minimum</th>
+    <th class="table-header">Temperature maximum</th>
+    <th class="table-header">Preasure</th>
+    <th class="table-header">Sea Level</th>
+    <th class="table-header">Ground level</th>
+    <th class="table-header">Humidity</th>
+    <th class="table-header">Wind Speed</th>
+    <th class="table-header">Wind Degree</th>
   </tr>
-  <tr *ngFor="let forecast of weatherForecast.forecasts" class="table-row">
-    <td class="table-data">{{forecast.date}}</td>
-    <td class="table-data">{{forecast.weather}}</td>
+  <tr *ngFor="let forecast of weatherForecast.list" class="table-row">
+    <td class="table-data">{{forecast.dt_txt}}</td>
+    <td class="table-data">{{forecast.weather[0].main}}</td>
+    <td class="table-data">{{forecast.main.temp}}</td>
+    <td class="table-data">{{forecast.main.temp_min}}</td>
+    <td class="table-data">{{forecast.main.temp_max}}</td>
+    <td class="table-data">{{forecast.main.pressure}}</td>
+    <td class="table-data">{{forecast.main.sea_level}}</td>
+    <td class="table-data">{{forecast.main.grnd_level}}</td>
+    <td class="table-data">{{forecast.main.humidity}}</td>
+    <td class="table-data">{{forecast.wind.speed}}</td>
+    <td class="table-data">{{forecast.wind.deg}}</td>
+
   </tr>
 </table>
 

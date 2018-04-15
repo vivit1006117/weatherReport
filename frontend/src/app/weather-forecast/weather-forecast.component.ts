@@ -8,25 +8,18 @@ import { WeatherForecastService } from '../app.service';
 })
 
 export class WeatherForecastComponent {
-  news = {};
-  weatherForecast = {
-    "forecasts": [
-      {
-        "state": "Bengaluru"
-      },
-      {
-        "state": "New Delhi"
-      },
-      {
-        "state": "Mumbai"
-      },
-      {
-        "state": "Kolkata"
-      }
-    ]
-  };
+  cityIds = [
+    1277333,   //bangalore
+    1275339,   //mumbai
+    1261481,   //new Delhi
+    1275004    //Kolkata
+  ];
+  weatherForecast = [];
 
   constructor(private WeatherForecastService: WeatherForecastService) {
-    this.WeatherForecastService.getForecast().subscribe(data => this.news = data);
+    let count: number;
+    for(count = 0; count < this.cityIds.length; count++) {
+      this.WeatherForecastService.getForecast(this.cityIds[count]).subscribe(data => this.weatherForecast.push(data));
+    }
   }
 }

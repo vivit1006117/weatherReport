@@ -1,24 +1,44 @@
 <div style="display: flex">
-  <table *ngFor="let forecast of weatherForecast.forecasts" class="currentForecast">
+  <table *ngFor="let forecast of weatherForecast" class="currentForecast">
     <tr>
-      <td class="sub-header">
-        <a routerLink="/detail/{{forecast.state}}">
+      <td class="sub-header" colspan="2">
+        <a routerLink="/detail/{{forecast.id}}">
           <img src="../assets/weather.jpeg" class="sub-header-image">
-          <span class="sub-header-text">{{forecast.state}}</span>
+          <span class="sub-header-text">{{forecast.name}}</span>
         </a>
       </td>
     </tr>
-    <tr>
-      <td>{{forecast.state}}</td>
+    <tr *ngFor="let weather of forecast.weather" class="currentForecast">
+      <td>Weather</td>
+      <td class="weather">{{weather.main}}</td>
     </tr>
     <tr>
-      <td>
-        <ul>
-          <li *ngFor="let links of news.hits" style="display: flex">
-            <a href={{links.url}} target="_blank">{{links.title}}</a>
-          </li>
-        </ul>
-      </td>
+      <td>Temperature</td>
+      <td>{{forecast.main.temp}}</td>
+    </tr>
+    <tr>
+      <td>Pressure</td>
+      <td>{{forecast.main.pressure}}</td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td>{{forecast.main.humidity}}</td>
+    </tr>
+    <tr>
+      <td>Temperature mininum</td>
+      <td>{{forecast.main.temp_min}}</td>
+    </tr>
+    <tr>
+      <td>Temperature maximum</td>
+      <td>{{forecast.main.temp_max}}</td>
+    </tr>
+    <tr>
+      <td>Wind Speed</td>
+      <td>{{forecast.wind.speed}}</td>
+    </tr>
+    <tr>
+      <td>Wind Speed</td>
+      <td>{{forecast.wind.deg}}</td>
     </tr>
   </table>
 </div>

@@ -12,35 +12,14 @@ import {Location} from '@angular/common';
 })
 export class DetailForecastComponent {
 
-  news = {};
-  weatherForecast = {
-    "state": "Bengaluru",
-    "forecasts": [
-      {
-        "date": "Bengaluru",
-        "weather": "43degree"
-      },
-      {
-        "date": "New Delhi",
-        "weather": "43degree"
-      },
-      {
-        "date": "Mumbai",
-        "weather": "43degree"
-      },
-      {
-        "date": "Kolkata",
-        "weather": "43degree"
-      }
-    ]
-  };
+  weatherForecast = {};
 
   constructor(private route: ActivatedRoute,
               private detailForecastService: WeatherForecastService,
               private location: Location) {
 
-      const selectedState = this.route.snapshot.paramMap.get('state');
-      this.detailForecastService.getDetailForecast(selectedState).subscribe(data => this.news = data);
+      const selectedState = +this.route.snapshot.paramMap.get('state');
+      this.detailForecastService.getDetailForecast(selectedState).subscribe(data => this.weatherForecast = data);
 
   }
 

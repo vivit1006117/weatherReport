@@ -1,3 +1,4 @@
 
 .idea/
-frontend/node_modules
+typescript-node-api/node_modules
+typescript-node-api/build/

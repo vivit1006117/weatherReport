@@ -8,11 +8,11 @@ export class WeatherForecastService {
     private http: HttpClient
   ) {}
 
-  getForecast() {
-    return this.http.get(`https://hn.algolia.com/api/v1/search_by_date?query=nodejs&tags=story`);
+  getForecast(id: number) {
+    return this.http.get(`http://api.openweathermap.org/data/2.5/weather?id=${id}&APPID=515fe162ca34547fcfc9cc438828f8fe`);
   }
 
-  getDetailForecast(selectedState: string) {
-    return this.http.get(`https://hn.algolia.com/api/v1/search_by_date?query=nodejs&tags=story`);
+  getDetailForecast(selectedId: number) {
+    return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?id=${selectedId}&APPID=515fe162ca34547fcfc9cc438828f8fe`);
   }
 }
