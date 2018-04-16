@@ -13,7 +13,7 @@
     <th class="table-header">Wind Speed</th>
     <th class="table-header">Wind Degree</th>
   </tr>
-  <tr *ngFor="let forecast of weatherForecast.list" class="table-row">
+  <tr *ngFor="let forecast of weatherForecast?.list" class="table-row">
     <td class="table-data">{{forecast.dt_txt}}</td>
     <td class="table-data">{{forecast.weather[0].main}}</td>
     <td class="table-data">{{forecast.main.temp}}</td>

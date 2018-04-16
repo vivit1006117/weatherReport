@@ -12,7 +12,7 @@ import {Location} from '@angular/common';
 })
 export class DetailForecastComponent {
 
-  weatherForecast = {};
+  weatherForecast: any;
 
   constructor(private route: ActivatedRoute,
               private detailForecastService: WeatherForecastService,
